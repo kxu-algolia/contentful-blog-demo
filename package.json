@@ -8,10 +8,13 @@
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
   "dependencies": {
+    "@styled-icons/fa-solid": "^10.34.0",
+    "algoliasearch": "^4.13.0",
     "gatsby": "^4.0.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-react-helmet": "^5.0.0",
     "gatsby-plugin-sharp": "^4.0.0",
+    "gatsby-plugin-styled-components": "^5.13.0",
     "gatsby-source-contentful": "^7.0.0",
     "gatsby-transformer-remark": "^5.0.0",
     "gatsby-transformer-sharp": "^4.0.0",
@@ -19,7 +22,9 @@
     "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-instantsearch-dom": "^6.24.2",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "contentful-import": "^8.0.0",

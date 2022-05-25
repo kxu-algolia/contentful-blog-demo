@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
+import Search from "./search"
 import * as styles from './navigation.module.css'
+
+const searchIndices = [{ name: `contentful_demo`, title: `Pages` }]
 
 const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">
@@ -20,6 +22,11 @@ const Navigation = () => (
           Blog
         </Link>
       </li>
+      <Search indices={searchIndices} />
+
+
+
+
     </ul>
   </nav>
 )
