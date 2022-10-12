@@ -11,7 +11,7 @@ const Popover = css`
   top: 100%;
   margin-top: 0.5em;
   width: 80vw;
-  max-width: 30em;
+  max-width: 50em;
   box-shadow: 0 0 5px 0;
   padding: 1em;
   border-radius: 2px;
