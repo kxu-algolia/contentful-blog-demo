@@ -6,7 +6,7 @@ const open = css`
   background: ${({ theme }) => theme.background};
   cursor: text;
   margin-left: -1.6em;
-  padding-left: 1.6em;
+  padding-left: 1.8em;
 `
 
 const closed = css`
@@ -26,9 +26,11 @@ export default styled(SearchBox)`
   .SearchInput {
     outline: none;
     border: ${({ hasFocus }) => (hasFocus ? "auto" : "none")};
-    font-size: 1em;
+    font-size: 1.5em;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     transition: 100ms;
-    border-radius: 2px;
+    border-radius: 5px;
     color: ${({ theme }) => theme.foreground};
     ::placeholder {
       color: ${({ theme }) => theme.faded};
@@ -37,8 +39,8 @@ export default styled(SearchBox)`
   }
 
   .SearchIcon {
-    width: 1em;
-    margin: 0.3em;
+    width: 1.25em;
+    margin: 0.5em;
     color: ${({ theme }) => theme.foreground};
     pointer-events: none;
   }
