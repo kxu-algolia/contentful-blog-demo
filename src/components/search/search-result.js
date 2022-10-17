@@ -17,27 +17,29 @@ const HitCount = connectStateResults(({ searchResults }) => {
   ) : null
 })
 
-/*
-function convertDate(hit) {
-  const date = new Date(hit.publishDate['en-US']);
+
+const PageHit = (({ hit }) => {
+
+  if (!hit) return null;
+
+  const date = new Date(hit.fields.publishDate['en-US']);
   const month = date.toLocaleString('default', { month: 'short' });
   const day = date.getDate();
   const year = date.getFullYear();
   const dateString = `${month} ${day}, ${year}`;
-  console.log("date", dateString);
-  return dateString;
-}
-*/
 
-const PageHit = (({ hit }) => {
   return hit ? (
     <div>
       <Link to={ "blog/" + hit.fields.slug['en-US'] } >
+
+
         <h4>
           <Highlight attribute="fields.title.en-US" hit={hit} tagName="mark" />
         </h4>
       </Link>
       <Snippet attribute="fields.description.en-US" hit={hit} tagName="mark" />
+
+      <h2 style={{ fontSize: 12 + "px", marginTop: 4 + "px" }}>{ dateString }</h2>
     </div> 
   ) : null
 })
