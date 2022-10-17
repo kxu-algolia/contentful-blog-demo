@@ -74,3 +74,4 @@ public
 Thumbs.db
 LOG.txt
 netlify.toml
+package-lock.json
