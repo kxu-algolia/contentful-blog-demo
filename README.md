@@ -1,6 +1,6 @@
 # Algolia Contentful Blog Demo
 
-Live Demo: https://algolia-contentful-blog.netlify.app/
+**Live Demo**: https://algolia-contentful-blog.netlify.app/
 
 ![Demo Home Page](./screenshot.png "Demo home page")
 
