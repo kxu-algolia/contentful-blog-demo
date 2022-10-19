@@ -1,13 +1,14 @@
 {
-  "name": "Contentful Gatsby Starter",
-  "description": "Gatsby starter for a Contentful project.",
+  "name": "Algolia Contentful Demo Blog",
+  "description": "Algolia demo blog built on Gatsby",
   "keywords": [
     "contentful",
     "gatsby",
+    "algolia",
     "static",
     "ssg"
   ],
-  "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
+  "repository": "https://github.com/kxu-algolia/contentful-blog-demo",
   "success_url": "/",
   "buildpacks": [
     {

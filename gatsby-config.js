@@ -36,8 +36,8 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful Starter",
-    description: "Official Contentful Gatsby Starter",
+    title: "Algolia Contentful Demo",
+    description: "Official Algolia Contentful demo blog",
   },
   plugins: [
     "gatsby-transformer-remark",
