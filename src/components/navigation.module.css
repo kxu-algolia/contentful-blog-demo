@@ -19,6 +19,7 @@
   display: inline-flex;
   align-items: center;
   flex-direction: row;
+  padding-left: .5rem;
 }
 
 .navigationItem a {
@@ -59,6 +60,5 @@
   height: 32px;
   width: 32px;
   display: block;
-  background-image:  url("https://www.algolia.com/algoliaweb-static-favicons/favicon-32x32.png"); 
-
+  background-image:  url("https://www.algolia.com/algoliaweb-static-favicons/light-mode/favicon-32x32.png");
 }
