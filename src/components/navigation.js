@@ -3,7 +3,10 @@ import { Link } from 'gatsby'
 import Search from "./search"
 import * as styles from './navigation.module.css'
 
-const searchIndices = [{ name: `contentful_demo`, title: `Pages` }]
+const searchIndices = [
+  { name: `contentful_demo`, title: `Pages` },
+  { name: `contentful_demo_query_suggestions`, title: `Suggestions` }
+]
 
 const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">

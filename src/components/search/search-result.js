@@ -44,17 +44,35 @@ const PageHit = (({ hit }) => {
   ) : null
 })
 
-const HitsInIndex = ({ index }) => (
-  <Index indexName={index.name}>
-    <HitCount />
-    <Hits className="Hits" hitComponent={PageHit} />
-  </Index>
-)
+
+const SuggestionHit = (({ hit }) => {
+  if (!hit) return null;
+
+  return hit ? (
+    <div className="tag">
+      { hit.query }
+    </div>
+  ) : null;
+})
+
+const HitsInIndex = (({ index }) => {
+    
+  return (index.title == "Pages") ? 
+
+    <Index indexName={index.name}>
+      <Hits className="Hits" hitComponent={PageHit} />
+    </Index>  :
+    <Index indexName={index.name}>
+      <Hits className="Suggestions" hitComponent={SuggestionHit} />
+    </Index>
+
+})
+
 const SearchResult = ({ indices, className }) => (
   <div className={className}>
-    {indices.map(index => (
-      <HitsInIndex index={index} key={index.name} />
-    ))}
+
+    <HitsInIndex index={indices[1]} key={indices[1].name} />
+    <HitsInIndex index={indices[0]} key={indices[0].name} />
     <PoweredBy />
   </div>
 )

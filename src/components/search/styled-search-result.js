@@ -23,7 +23,7 @@ export default styled(SearchResult)`
   ${Popover}
 
   .HitCount {
-    display: flex;
+    display: flex-inline;
     justify-content: flex-end;
   }
 
@@ -45,6 +45,29 @@ export default styled(SearchResult)`
       }
     }
   }
+
+
+  .Suggestions {
+    ul {
+      list-style: none;
+      margin-left: 0;
+      display:flex;
+      justify-content: start;
+
+    }
+
+    li {
+      display: flex;
+      justify-content: flex-end;
+      background-color: var(--black-fade-5);
+      border-radius: var(--radius-sm);
+      line-height: var(--solid);
+      padding: var(--space-md);
+      width: fit-content;
+      margin-right: 1em;
+    }
+  }
+
 
   .ais-PoweredBy {
     display: flex;
