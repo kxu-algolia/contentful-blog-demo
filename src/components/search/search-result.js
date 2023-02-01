@@ -17,10 +17,10 @@ const HitCount = connectStateResults(({ searchResults }) => {
   ) : null
 })
 
-
 const PageHit = (({ hit }) => {
 
   if (!hit) return null;
+  if (hit.sys.type === "DeletedEntry") return null;
 
   const date = new Date(hit.fields.publishDate['en-US']);
   const month = date.toLocaleString('default', { month: 'short' });
