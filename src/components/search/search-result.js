@@ -18,36 +18,40 @@ const HitCount = connectStateResults(({ searchResults }) => {
 })
 
 const PageHit = (({ hit }) => {
-
   if (!hit) return null;
-  if (hit.sys.type === "DeletedEntry") return null;
+  if (hit.sys) {
+    if (hit.sys.type) {
+      if (hit.sys.type === "DeletedEntry") return null;
+    }
+  }
 
-  const date = new Date(hit.fields.publishDate['en-US']);
-  const month = date.toLocaleString('default', { month: 'short' });
-  const day = date.getDate();
-  const year = date.getFullYear();
-  const dateString = `${month} ${day}, ${year}`;
+  try {
+    const date = new Date(hit.fields.publishDate['en-US']);
+    const month = date.toLocaleString('default', { month: 'short' });
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const dateString = `${month} ${day}, ${year}`;
 
-  return hit ? (
-    <div>
-      <Link to={ "blog/" + hit.fields.slug['en-US'] } >
+    return hit ? (
+      <div>
+        <Link to={ "blog/" + hit.fields.slug['en-US'] } >
+          <h4>
+            <Highlight attribute="fields.title.en-US" hit={hit} tagName="mark" />
+          </h4>
+        </Link>
+        <Snippet attribute="fields.description.en-US" hit={hit} tagName="mark" />
 
-
-        <h4>
-          <Highlight attribute="fields.title.en-US" hit={hit} tagName="mark" />
-        </h4>
-      </Link>
-      <Snippet attribute="fields.description.en-US" hit={hit} tagName="mark" />
-
-      <h2 style={{ fontSize: 12 + "px", marginTop: 4 + "px" }}>{ dateString }</h2>
-    </div> 
-  ) : null
+        <h2 style={{ fontSize: 12 + "px", marginTop: 4 + "px" }}>{ dateString }</h2>
+      </div> 
+    ) : null
+  } catch (error) {
+    return null;
+  }
 })
 
 
 const SuggestionHit = (({ hit }) => {
   if (!hit) return null;
-
   return hit ? (
     <div className="tag">
       { hit.query }
